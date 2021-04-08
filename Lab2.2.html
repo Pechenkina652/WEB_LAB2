@@ -3,5 +3,19 @@
     <title>Печенкина А.В., Елисеева В.А. ПИ-318</title>
   </head>
   <body>
+    <p><b><font size=6>Отправка сообщения</font></b>
+    <form name="user">
+      <b>Пожалуйста, заполните данные:</b><br><br>
+      <font size=2>*-поля, отмеченные звездочкой, обязательны к заполнению</font><br><br>
+      Ваше имя * <input type="text" name="name" size="44"><br><br> 
+      Пароль * <input type="text" name="pass" size="47"><br><br>
+      Подтверждение пароля * <input type="text" name="podpass" size="30"><br><br> 
+      Email * <input type="text" name="e" size="49"><br><br>
+      Тема сообщения <input type="text" name="tema" size="39"><br><br>
+      Сообщение  <input type="textarea" name="text" size="44"><br><br>
+      <input type="button" value="Отправить" onClick="doSend()">
+      <input type="reset" value="Очистить">
+    </form>
+    </p>
   </body>
 </html>

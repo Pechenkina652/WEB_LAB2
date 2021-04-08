@@ -1,7 +1,29 @@
 <html>
   <head>
     <title>Печенкина А.В., Елисеева В.А. ПИ-318</title>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
   </head>
   <body>
+    <button class="left"> Влево </button>
+    <button class="right"> Вправо </button>
+    <button class="up"> Вверх </button>
+    <button class="down"> Вниз </button>
+    <div class="control_block_container">
+      <div id="box" style="position:absolute; top:200px; left:500px"> <img src="pic.png" width="250" height="250" alt="todo"> </div>
+    </div>
+    <script type="text/javascript">
+      $(".left").click(function(){
+        $("#box").animate({left: "-=100"}, 1000)
+      });
+      $(".right").click(function(){
+        $("#box").animate({left: "+=100"}, 1000)
+      });
+      $(".up").click(function(){
+        $("#box").animate({top: "-=100"}, 1000)
+      });
+      $(".down").click(function(){
+        $("#box").animate({top: "+=100"}, 1000)
+      });
+    </script>
   </body>
 </html>

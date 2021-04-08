@@ -1,6 +1,61 @@
 <html>
   <head>
     <title>Печенкина А.В., Елисеева В.А. ПИ-318</title>
+    <script language="JavaScript">
+      function doSend(){
+        var v=document.user.e.value.indexOf("@",1);
+        if(document.user.name.value==""){
+          alert('Вы должны заполнить поле Ваше имя');
+          document.user.name.style.borderColor="#FF0000";
+        }else if(document.user.pass.value==""){
+          document.user.name.style.borderColor="#000000";
+          alert('Вы должны заполнить поле Пароль');
+          document.user.pass.style.borderColor="#FF0000";
+        }else if(document.user.pass.value.length<4){
+          document.user.name.style.borderColor="#000000";
+          alert('Пароль содержит менее 4-х символов');
+          document.user.pass.style.borderColor="#FF0000";
+        }else if(document.user.podpass.value==""){
+          document.user.name.style.borderColor="#000000";
+          document.user.pass.style.borderColor="#000000";
+          alert('Вы должны заполнить поле Подтверждение пароля');
+          document.user.podpass.style.borderColor="#FF0000";
+        }else if(document.user.podpass.value!=document.user.pass.value){
+          document.user.name.style.borderColor="#000000";
+          alert('Пароли не совпадают');
+          document.user.pass.style.borderColor="#FF0000";
+          document.user.podpass.style.borderColor="#FF0000";
+        }else if(document.user.e.value==""){
+          document.user.name.style.borderColor="#000000";
+          document.user.pass.style.borderColor="#000000";
+          document.user.podpass.style.borderColor="#000000";
+          alert('Вы должны заполнить поле Email');
+          document.user.e.style.borderColor="#FF0000";
+        }else if(v==-1){
+          document.user.name.style.borderColor="#000000";
+          document.user.pass.style.borderColor="#000000";
+          document.user.podpass.style.borderColor="#000000";
+          alert('Адрес e-mail указан неверно');
+          document.user.e.style.borderColor="#FF0000";
+        }else if(document.user.text.value==""){
+          document.user.name.style.borderColor="#000000";
+          document.user.pass.style.borderColor="#000000";
+          document.user.podpass.style.borderColor="#000000";
+          document.user.e.style.borderColor="#000000";
+          alert('Вы должны заполнить поле Сообщение');
+          document.user.text.style.borderColor="#FF0000";
+        }else if(document.user.text.value.length<10){
+          document.user.name.style.borderColor="#000000";
+          document.user.pass.style.borderColor="#000000";
+          document.user.podpass.style.borderColor="#000000";
+          document.user.e.style.borderColor="#000000";
+          alert('Сообщение содержит менее 10 символов');
+          document.user.text.style.borderColor="#FF0000";
+        }else{
+          document.user.submit();
+        }
+      }
+    </script>
   </head>
   <body>
     <p><b><font size=6>Отправка сообщения</font></b>

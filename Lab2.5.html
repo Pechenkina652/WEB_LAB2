@@ -1,7 +1,42 @@
 <html>
   <head>
     <title>Печенкина А.В., Елисеева В.А. ПИ-318</title>
+    <script type="text/javascript" src="jquery-3.6.0.js"></script>
   </head>
   <body>
+     <img src="pic.png" width="250" height="250" alt="todo" id="todo">
+    <script type="text/javascript">
+      var todo = document.getElementById('todo');
+      todo.onmousedown = function(e){
+        var coords = getCoords(todo);
+        var shiftX = e.pageX - coords.left;
+        var shiftY = e.pageY - coords.top;
+        todo.style.position = 'absolute';
+        document.body.appendChild(todo);
+        moveAt(e);
+        todo.style.zIndex = 1000;
+        function moveAt(e) {
+          todo.style.left = e.pageX - shiftX + 'px';
+          todo.style.top = e.pageY - shiftY + 'px';
+        }
+        document.onmousemove = function(e) {
+          moveAt(e);
+        };
+        todo.onmouseup = function() {
+          document.onmousemove = null;
+          todo.onmouseup = null;
+        };
+      }
+      todo.ondragstart = function() {
+        return false;
+      };
+      function getCoords(elem) {
+        var box = elem.getBoundingClientRect();
+        return {
+          top: box.top + pageYOffset,
+          left: box.left + pageXOffset
+        };
+      }
+    </script>
   </body>
 </html>

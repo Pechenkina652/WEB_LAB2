@@ -8,8 +8,46 @@
     <h3>Из какой Вы группы?</h3>
     <form>
       <button id="1">ПИ-318</button>
+      <label id="label1"></label>
+      <output id="per1" type="text" name="1"></output><br><br>
       <button id="2">ПИ-319</button>
+      <label id="label2"></label>
+      <output id="per2" type="text" name="2"></output><br><br>
       <button id="3">ПИ-320</button>
+      <label id="label3"></label>
+      <output id="per3" type="text" name="3"></output><br><br>
     </form>
+    <button id="button">Рассчитать процент</button>
+    <script type="text/javascript">
+      var a = 0;
+      var b = 0;
+      var c = 0;
+      var sum = 0;
+      $(document).ready(function(){
+        $("#button").click(function(){
+          document.getElementById("per1").value = "Процентное соотношение: "+(a/sum)*100+"%";
+          document.getElementById("per2").value = "Процентное соотношение: "+(b/sum)*100+"%";
+          document.getElementById("per3").value = "Процентное соотношение: "+(c/sum)*100+"%";
+        });
+        $("#1").click(function(){
+          a +=1;
+          sum +=1;
+          $("#label1").text("Кол-во голосов: "+a);
+          return false;
+        });
+        $("#2").click(function(){
+          b +=1;
+          sum +=1;
+          $("#label2").text("Кол-во голосов: "+b);
+          return false;
+        });
+        $("#3").click(function(){
+          c +=1;
+          sum +=1;
+          $("#label3").text("Кол-во голосов: "+c);
+          return false;
+        });
+      });
+    </script>
   </body>
 </html>
